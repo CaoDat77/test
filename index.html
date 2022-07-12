@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Xử lí số
+      // Bài 1
+      const pi = 3.14;
+      function bai1(r) {
+        result = pi * r * 3;
+        return result;
+      }
+      console.log(bai1(4));
+
+      // Bài 2
+      function bai2(a, b) {
+        let sum = 0;
+        for (i = a + 1; i < b; i++) {
+          sum += i;
+        }
+        return sum;
+      }
+      console.log(bai2(3, 8));
+
+      // Bài 3
+      function bai3(a) {
+        let total = 0;
+        for (i = 0; i <= a; i++) {
+          if (a % i == 0) {
+            total += i;
+          }
+        }
+        return total;
+      }
+      console.log(bai3(16));
+
+      // Bài 4
+      function bai4(a) {
+        if (a < 2) {
+          return false;
+        }
+
+        if (a % 2 == 0) {
+          return false;
+        }
+        for (i = 0; i < a - 1; i++) {
+          if (a % i == 0) {
+            return false;
+          } else {
+            return true;
+          }
+        }
+      }
+      console.log(bai4(7));
+
+      // Bài 5
+      function bai5(a) {
+        let total5 = 0;
+        for (i = a; i > 0; i--) {
+          total5 += i;
+        }
+        return total5;
+      }
+      console.log(bai5(5));
+
+      //Xử lí chuỗi
+      // Bài 1
+      function bai6(str) {
+        let splitStr = str.toLowerCase().trim().split(" ");
+        for (let i = 0; i < splitStr.length; i++) {
+          splitStr[i] =
+            splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);
+        }
+        return splitStr.join(" ");
+      }
+      console.log(bai6("HELLO world"));
+
+      // Bài 2
+      function bai7(str) {
+        let splitStr = str.trim().toLowerCase().split(" ");
+        for (let i = 0; i < splitStr.length; i++) {
+          splitStr;
+        }
+        return splitStr.join("-");
+      }
+      console.log(bai7("HELLO world"));
+
+      //Bài 3
+      function bai8(str) {
+        let oldStr = str.toLowerCase().replaceAll(" ", "");
+        let newStr = str
+          .toLowerCase()
+          .replaceAll(" ", "")
+          .split("")
+          .reverse()
+          .join("");
+        if (oldStr == newStr) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+      console.log(bai8("Race car"));
+      console.log(bai8("hello world"));
+
+      // Bài 4
+
+      //Xử lí mảng
+      //Bài 1
+      function bai10(arr) {
+        for (i = arr.length - 1; i >= 0; i--) {
+          if (
+            isNaN(arr[i]) ||
+            arr[i] === 0 ||
+            arr[i] === false ||
+            arr[i] === "" ||
+            arr[i] === undefined ||
+            arr[i] === null
+          ) {
+            arr.splice(i, 1);
+          }
+        }
+        console.log(arr);
+      }
+      bai10([10, 20, 0, false]);
+
+      // Bài 2
+      function bai11(arr) {
+        let maxLength = arr[0].length;
+        let newArr = [];
+        for (i = 0; i < arr.length; i++) {
+          if (arr[i].length >= maxLength) {
+            maxLength = arr[i].length;
+            newArr.push(arr[i]);
+          }
+        }
+        console.log(newArr);
+      }
+      bai11(["aba", "aa", "ad", "c", "vcd"]);
+
+      // Bài 3
+      function diff(arr1, arr2) {
+        var newArray = [];
+        for (var i = 0; i < arr1.length; i++) {
+          if (arr2.indexOf(arr1[i]) == -1) newArray.push(arr1[i]);
+        }
+        for (var i = 0; i < arr2.length; i++) {
+          if (arr1.indexOf(arr2[i]) == -1) newArray.push(arr2[i]);
+        }
+        return newArray;
+      }
+      console.log(diff([1, 2, 3][(1, 3, 4, 5, 5)]));
+
+      //Bai 4
+      
+
+      // Xử lí Object
+      arr = [
+        (huy = {
+          name: "Huy",
+          age: 20,
+        }),
+        (son = {
+          name: "Son",
+          age: 21,
+        }),
+        (ba = {
+          name: "Ba",
+          age: 22,
+        }),
+      ];
+
+      student = [huy, son, ba];
+
+      // Bài 1
+      function totalAge(totalAge) {
+        totalAge = huy.age + son.age + ba.age;
+        return totalAge / 3;
+      }
+      console.log(totalAge(0));
+
+      // Bài 2
+      age = student.sort(function (student1, student2) {
+        if (student1.age < student2.age) return -1;
+        else return 1;
+      });
+      console.log(age);
+
+      // Bài 3
+      function sortName(arr) {
+        let sortname = arr.sort(function (student1, student2) {
+          if (student1.name < student2.name) return -1;
+          else return 1;
+        });
+        console.log(sortname);
+      }
+      sortName(student);
+      // Bài 4
+      function findName(arr) {
+        let findname = arr.find(function (student) {
+          if (student.name.startsWith("H")) {
+            console.log(student.name);
+          }
+        });
+      }
+      findName(student);
+
+      // Tổng hợp
+      // Bài 1
+      function numberLow(number) {
+        let newNumber = number.toString(10);
+        numbers = newNumber.split("").sort();
+
+        return numbers;
+      }
+      console.log(numberLow(530751));
+    </script>
+  </body>
+</html>
